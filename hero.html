@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+
+      .box {
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      video {
+        width: 300px;
+        height: 300px;
+        border: 2px solid #333;
+        border-radius: 8px;
+        background-color: #000;
+      }
+
+      button {
+        background-color: #52024f;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: flex;        
+        font-size: 16px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #b30068;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <video src="" id="video" autoplay></video>
+      <button onclick="opencamera()">Open camera</button>
+      <button id="close" onclick="closecamera()">Close camera</button>
+    </div>
+
+    <script>
+      let stream;
+
+      async function opencamera() {
+        stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        document.getElementById("video").srcObject = stream;
+      }
+
+      function closecamera() {
+        if (stream) {
+          const tracks = stream.getTracks();
+          tracks.forEach((track) => track.stop());
+          document.getElementById("video").srcObject = null;
+        }
+      }
+    </script>
+  </body>
+</html>

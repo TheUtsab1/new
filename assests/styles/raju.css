@@ -1,0 +1,44 @@
+* {
+  font-family: cursive;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.linear {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 19, 19, 0.19),
+    rgb(113, 3, 90)
+  );
+}
+
+h1 {
+  text-align: center;
+  color: rgb(234, 33, 15);
+  text-shadow: 2px 2px 9px #000000;
+}
+
+.imo img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* .radial {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.421), rgba(0, 0, 0, 0.889)),
+  url(../sojho.png);
+} */
+
+/* .conic {
+  background-image: repeating-conic-gradient( red 10%, yellow 20%);
+  border-radius: 50%;
+
+} */
+
+.grad {
+  height: 50vh;
+}
